@@ -2,5 +2,85 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "networkInterfaceName": {
+      "value": "web02764"
+    },
+    "enableAcceleratedNetworking": {
+      "value": true
+    },
+    "networkSecurityGroupName": {
+      "value": "web02-nsg"
+    },
+    "networkSecurityGroupRules": {
+      "value": [
+        {
+          "name": "RDP",
+          "properties": {
+            "priority": 300,
+            "protocol": "TCP",
+            "access": "Allow",
+            "direction": "Inbound",
+            "sourceAddressPrefix": "*",
+            "sourcePortRange": "*",
+            "destinationAddressPrefix": "*",
+            "destinationPortRange": "3389"
+          }
+        }
+      ]
+    },
+    "subnetName": {
+      "value": "default"
+    },
+    "virtualNetworkId": {
+      "value": "/subscriptions/679c8a77-ee3b-4830-beb0-c4345ef65a27/resourceGroups/Project-241095/providers/Microsoft.Network/virtualNetworks/web01-vnet"
+    },
+    "publicIpAddressName": {
+      "value": "web02-ip"
+    },
+    "publicIpAddressType": {
+      "value": "Static"
+    },
+    "publicIpAddressSku": {
+      "value": "Standard"
+    },
+    "pipDeleteOption": {
+      "value": "Detach"
+    },
+    "virtualMachineName": {
+      "value": "web02"
+    },
+    "virtualMachineComputerName": {
+      "value": "web02"
+    },
+    "virtualMachineRG": {
+      "value": "Project-241095"
+    },
+    "osDiskType": {
+      "value": "Standard_LRS"
+    },
+    "osDiskDeleteOption": {
+      "value": "Delete"
+    },
+    "virtualMachineSize": {
+      "value": "Standard_D2s_v3"
+    },
+    "nicDeleteOption": {
+      "value": "Detach"
+    },
+    "adminUsername": {
+      "value": "iisadmin"
+    },
+    "adminPassword": {
+      "value": "Landmark123!"
+    },
+    "patchMode": {
+      "value": "AutomaticByOS"
+    },
+    "enableHotpatching": {
+      "value": false
+    }
   }
 }
